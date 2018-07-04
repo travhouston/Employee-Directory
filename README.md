@@ -1,1 +1,3 @@
-# techdegree-project-10
+Techdegree Project 10
+
+Employee Directory
