@@ -36,7 +36,9 @@ $(document).ready(function () {
 //  Modal //
 
 		//Function to run when employee card is clicked
-		    $(".employee").click( () => {
+		    $(".employee").click( (e) => {
+
+                e.preventDefault();
 
                 function modalZoom(i) {
 
