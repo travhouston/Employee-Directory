@@ -71,7 +71,8 @@ $(document).ready(function () {
                 $("#modal").fadeIn();
 
             // Click overlay to close 
-                $(".modal-overlay").on('click', () => {
+                $(".modal-overlay").on('click', (e) => {
+                    e.preventDefault();
                     // Hide modalOverlay
                     $('.modal-overlay').fadeOut();
                     // Hide modal
@@ -79,7 +80,8 @@ $(document).ready(function () {
                 });
 
             // Close button on modal overlay
-                $("#close").on('click', () => {
+                $("#close").on('click', (e) => {
+                    e.preventDefault();
                     // Hide modalOverlay
                     $('.modal-overlay').fadeOut();
                     // Hide modal
