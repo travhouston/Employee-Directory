@@ -36,11 +36,18 @@ $(document).ready(function () {
 //  Modal //
 
 		//Function to run when employee card is clicked
-		    $(".employee").click( (e) => {
+		    $(".employee").click( function (e) {
 
                 e.preventDefault();
 
                 function modalZoom(i) {
+
+                    // Format birthday date
+                    let day = profile[i].dob.date.substr(8, 2);
+                    let month = profile[i].dob.date.substr(5, 2);
+                    let year = profile[i].dob.date.substr(0, 4).slice(2, 4);
+                
+                    profile[i].dob.date = month + '/' + day + '/' + year;
 
                     $("#modal").html(
                         `<div class="close-container">
@@ -64,7 +71,7 @@ $(document).ready(function () {
                 } // end modalZoom function
                 
                 // Run modal function
-                modalZoom($(".employee").attr('id'));
+                modalZoom($(this).attr('id'));
                 // Display modalOverlay
                 $('.modal-overlay').fadeIn();
                 // Display modal
